@@ -1,8 +1,8 @@
-# 📈 Stock Market ETL Pipeline
+#  Stock Market ETL Pipeline
 
 An automated ETL pipeline that extracts, transforms, and loads daily stock market data into a MySQL database.
 
-## 🏗️ Architecture
+##  Architecture
 ```
 yfinance API → extract.py → transform.py → load.py → MySQL
                                     ↓
@@ -11,14 +11,14 @@ yfinance API → extract.py → transform.py → load.py → MySQL
                          dags/stock_dag.py (Airflow DAG)
 ```
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 - **Python** — pandas, yfinance
 - **MySQL** — data storage
 - **Apache Airflow** — orchestration (DAG implemented)
 - **schedule** — local daily execution
 
-## 📁 Project Structure
+##  Project Structure
 ```
 stock-pipeline/
 ├── dags/
@@ -34,7 +34,7 @@ stock-pipeline/
 └── README.md
 ```
 
-## 📊 Tracked Stocks
+##  Tracked Stocks
 
 | Ticker | Company |
 |--------|---------|
@@ -44,7 +44,7 @@ stock-pipeline/
 | AMZN | Amazon |
 | GOOGL | Google |
 
-## 🔄 Computed Metrics
+##  Computed Metrics
 
 | Metric | Description |
 |--------|-------------|
@@ -68,8 +68,7 @@ Edit `config/db_config.py` with your credentials.
 python schedule.py
 ```
 
-## 📋 Requirements
-```
+
 yfinance
 pandas
 mysql-connector-python
