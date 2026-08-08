@@ -1,9 +1,9 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-import sys 
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+
+sys.path.append('/opt/airflow')
 
 from scripts.extract import extract
 from scripts.transform import transform
@@ -25,6 +25,7 @@ with DAG(
     catchup=False,
     tags=["finance", "etl"]
 ) as dag:
+
     def extract_task(**kwargs):
         df = extract()
         kwargs["ti"].xcom_push(key="raw_data", value=df.to_json())
@@ -35,7 +36,7 @@ with DAG(
         df_raw = pd.read_json(raw_json)
         df_transformed = transform(df_raw)
         kwargs["ti"].xcom_push(key="transformed_data", value=df_transformed.to_json())
-    
+
     def load_task(**kwargs):
         import pandas as pd
         transformed_json = kwargs["ti"].xcom_pull(key="transformed_data", task_ids="transform")

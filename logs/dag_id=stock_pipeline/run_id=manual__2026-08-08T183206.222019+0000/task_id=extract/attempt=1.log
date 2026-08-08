@@ -1,0 +1,32 @@
+[2026-08-08T18:32:10.969+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-08-08T18:32:10.988+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_pipeline.extract manual__2026-08-08T18:32:06.222019+00:00 [queued]>
+[2026-08-08T18:32:10.998+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_pipeline.extract manual__2026-08-08T18:32:06.222019+00:00 [queued]>
+[2026-08-08T18:32:10.999+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 3
+[2026-08-08T18:32:11.016+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): extract> on 2026-08-08 18:32:06.222019+00:00
+[2026-08-08T18:32:11.025+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=139) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-08T18:32:11.027+0000] {standard_task_runner.py:72} INFO - Started process 143 to run task
+[2026-08-08T18:32:11.028+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'stock_pipeline', 'extract', 'manual__2026-08-08T18:32:06.222019+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/stock_dag.py', '--cfg-path', '/tmp/tmpvsc9ykt2']
+[2026-08-08T18:32:11.033+0000] {standard_task_runner.py:105} INFO - Job 19: Subtask extract
+[2026-08-08T18:32:11.232+0000] {task_command.py:467} INFO - Running <TaskInstance: stock_pipeline.extract manual__2026-08-08T18:32:06.222019+00:00 [running]> on host b86cc619ddcb
+[2026-08-08T18:32:11.371+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='chaima' AIRFLOW_CTX_DAG_ID='stock_pipeline' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2026-08-08T18:32:06.222019+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-08T18:32:06.222019+00:00'
+[2026-08-08T18:32:11.376+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-08-08T18:32:11.442+0000] {logging_mixin.py:190} INFO - Extracting AAPL...
+[2026-08-08T18:32:11.450+0000] {cache.py:132} INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/***/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/***/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+[2026-08-08T18:32:12.832+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-08-08T18:32:12.863+0000] {logging_mixin.py:190} INFO - Extracting MSFT...
+[2026-08-08T18:32:13.297+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-08-08T18:32:13.303+0000] {logging_mixin.py:190} INFO - Extracting TSLA...
+[2026-08-08T18:32:13.681+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-08-08T18:32:13.692+0000] {logging_mixin.py:190} INFO - Extracting AMZN...
+[2026-08-08T18:32:14.075+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-08-08T18:32:14.080+0000] {logging_mixin.py:190} INFO - Extracting GOOGL...
+[2026-08-08T18:32:14.429+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-08-08T18:32:14.433+0000] {logging_mixin.py:190} INFO - Extracted 310 rows total.
+[2026-08-08T18:32:14.493+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-08-08T18:32:14.516+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-08-08T18:32:14.517+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=stock_pipeline, task_id=extract, run_id=manual__2026-08-08T18:32:06.222019+00:00, execution_date=20260808T183206, start_date=20260808T183210, end_date=20260808T183214
+[2026-08-08T18:32:14.582+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-08-08T18:32:14.603+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-08-08T18:32:14.607+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
